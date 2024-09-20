@@ -13,5 +13,10 @@ then
 fi
 if ((unit>200));
 then
-	sum=$(($sum+($unit-200)*5.5))
+	sum=$(echo "$sum + ($unit - 200) * 5.5" | bc)
+fi
+
+sum=$(echo "$sum + ($unit*4.5)") |bc)
+
+echo "Your total is: $sum"
 
